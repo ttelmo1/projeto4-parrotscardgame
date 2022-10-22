@@ -18,6 +18,7 @@ h1{
     font-size: 56px;
     color: #75B79E;
     margin-top: 40px;
+    margin-bottom: 47px;
 }
 
 .time{
@@ -28,11 +29,15 @@ h1{
 
 .grid{
     display: flex;
-    flex-wrap: wrap;
-    margin-top: 47px;
-    justify-content: center;
     box-sizing: border-box;
     padding-left: 42px;
+    margin: auto;
+    width: 80%;
+    max-height: 400px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
 }
 
 
@@ -47,9 +52,43 @@ h1{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background-repeat: no-repeat;
+    background-size: 75%;
+    background-position: center;
+
+
+    transform-style: preserve-3d;
+    transition: all 1.5s;
+}
+
+.cardBack{
+    transform: rotateY(180deg);
+    transition: all 0.6s;
 }
 
 img{
     width: 100px;
     height: 100px;
+}
+
+.frame:hover{
+    cursor: pointer;
+    scale: 1.1;
+}
+
+
+@media(max-width: 1080px){
+    .grid{
+        max-height: 100%;
+        flex-direction: row;
+
+    }
+}
+
+@media(max-width: 530px){
+    .grid{
+        max-height: 100%;
+        flex-direction: column;
+
+    }
 }
