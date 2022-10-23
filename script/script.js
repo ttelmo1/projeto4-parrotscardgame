@@ -120,10 +120,12 @@ addCards(Number(cardsNumber))
       for(let i = 0; i < Number(cardsNumber); i++){
           let frame = document.createElement("div")
           frame.className = "frame"
-          frame.setAttribute("style", "background-image: url("+cardFront+")")
+          let cardImg = document.createElement('img')
+          cardImg.setAttribute('src', "../img/front.png")
           frame.setAttribute("data-id", i)
           frame.addEventListener("click", flip)
           frame.addEventListener("click", checkClick)
+          frame.appendChild(cardImg)
           grid.appendChild(frame)
           
       }
@@ -138,19 +140,22 @@ addCards(Number(cardsNumber))
   }
 
   function check(){
-      let cardSelect = document.querySelectorAll(".frame")
+      let cardSelect = document.querySelectorAll("img")
+      let frameSelect = document.querySelectorAll(".frame")
       let optionOne = cardChosenId[0]
       let optionTwo = cardChosenId[1]
 
-      if(cardChosen[0] == cardChosen[1]){
+      if(cardChosen[0] == cardChosen[1] && cardChosenId[0] !== cardChosenId[1]){
           cardFind += 2
           rolls++
       }
       else{
-          cardSelect[optionOne].classList.toggle("cardBack")
-          cardSelect[optionOne].setAttribute("style", "background-image: url("+cardFront+")")
-          cardSelect[optionTwo].classList.toggle("cardBack")
-          cardSelect[optionTwo].setAttribute("style", "background-image: url("+cardFront+")")
+          frameSelect[optionOne].classList.toggle("cardBack")
+          frameSelect[optionTwo].classList.toggle("cardBack")
+          setTimeout(function() {
+            cardSelect[optionOne].setAttribute("src", "../img/front.png")
+            cardSelect[optionTwo].setAttribute("src", "../img/front.png")
+          }, 500)
           rolls++
       }
       if(cardFind == cardsNumber){
@@ -206,7 +211,7 @@ addCards(Number(cardsNumber))
     cardChosen.push(cards[cardId].name)
     cardChosenId.push(cardId)
     this.classList.toggle("cardBack")
-    this.setAttribute("style", "background-image: url("+cards[cardId].img+")")
+    this.querySelector("img").setAttribute("src", cards[cardId].img)
     if(cardChosen.length == 2){
         setTimeout(check , 500)
     }

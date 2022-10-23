@@ -55,14 +55,17 @@ h1{
     background-repeat: no-repeat;
     background-size: 75%;
     background-position: center;
-
-
-    transform-style: preserve-3d;
     transition: all 1.5s;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 .cardBack{
     transform: rotateY(180deg);
+    transition: all 0.6s;
+}
+
+.cardBackReverse{
+    transform: rotateY(-180deg);
     transition: all 0.6s;
 }
 
