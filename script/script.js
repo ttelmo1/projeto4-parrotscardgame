@@ -4,11 +4,11 @@ document.addEventListener("DOMContentLoaded", ()=>{
   const grid = document.querySelector(".grid");
   let cards = [{
       name: "1",
-      img: "../img/bobrossparrot.gif"
+      img: "./img/bobrossparrot.gif"
   },
   {
       name: "2",
-      img: "../img/explodyparrot.gif"
+      img: "./img/explodyparrot.gif"
   }
 ]
 
@@ -37,17 +37,17 @@ function addCards(count) {
       cards = cards.flatMap(i => [i, i])
       break
     case 6:
-      cards.push({name: "3", img: "../img/fiestaparrot.gif"})
+      cards.push({name: "3", img: "./img/fiestaparrot.gif"})
       cards = cards.flatMap(i => [i, i])
       break
     case 8:
       cards.push(
           {
               name: "3",
-              img: "../img/fiestaparrot.gif"},
+              img: "./img/fiestaparrot.gif"},
               {
               name: "4",
-              img: "../img/metalparrot.gif"
+              img: "./img/metalparrot.gif"
               })
       cards = cards.flatMap(i => [i, i])
       break
@@ -55,14 +55,14 @@ function addCards(count) {
       cards.push(
           {
               name: "3",
-              img: "../img/fiestaparrot.gif"},
+              img: "./img/fiestaparrot.gif"},
           {
               name: "4",
-              img: "../img/metalparrot.gif"
+              img: "./img/metalparrot.gif"
               },
           {
               name: "5",
-              img: "../img/revertitparrot.gif"
+              img: "./img/revertitparrot.gif"
     })
       cards = cards.flatMap(i => [i, i])
       break
@@ -70,18 +70,18 @@ function addCards(count) {
       cards.push(
           {
               name: "3",
-              img: "../img/fiestaparrot.gif"},
+              img: "./img/fiestaparrot.gif"},
                  {
               name: "4",
-              img: "../img/metalparrot.gif"
+              img: "./img/metalparrot.gif"
                  },
                    {
               name: "5",
-              img: "../img/revertitparrot.gif"
+              img: "./img/revertitparrot.gif"
                   },
                 {
               name: "6",
-              img: "../img/tripletsparrot.gif"
+              img: "./img/tripletsparrot.gif"
     })
       cards = cards.flatMap(i => [i, i])
       break
@@ -89,22 +89,22 @@ function addCards(count) {
       cards.push(
           {
               name: "3",
-              img: "../img/fiestaparrot.gif"},
+              img: "./img/fiestaparrot.gif"},
                  {
               name: "4",
-              img: "../img/metalparrot.gif"
+              img: "./img/metalparrot.gif"
                  },
                    {
               name: "5",
-              img: "../img/revertitparrot.gif"
+              img: "./img/revertitparrot.gif"
                   },
                 {
               name: "6",
-              img: "../img/tripletsparrot.gif"
+              img: "./img/tripletsparrot.gif"
                   },
                 {
               name: "7",
-              img: "../img/unicornparrot.gif"
+              img: "./img/unicornparrot.gif"
     })
       cards = cards.flatMap(i => [i, i])
       break
@@ -121,7 +121,7 @@ addCards(Number(cardsNumber))
           let frame = document.createElement("div")
           frame.className = "frame"
           let cardImg = document.createElement('img')
-          cardImg.setAttribute('src', "../img/front.png")
+          cardImg.setAttribute('src', "./img/front.png")
           frame.setAttribute("data-id", i)
           frame.addEventListener("click", flip)
           frame.addEventListener("click", checkClick)
@@ -132,7 +132,7 @@ addCards(Number(cardsNumber))
 
   }
 
-  let cardFront = "../img/front.png"
+  let cardFront = "./img/front.png"
 
   let cardsClicked = 0;
   function checkClick() {
@@ -153,8 +153,8 @@ addCards(Number(cardsNumber))
           frameSelect[optionOne].classList.toggle("cardBack")
           frameSelect[optionTwo].classList.toggle("cardBack")
           setTimeout(function() {
-            cardSelect[optionOne].setAttribute("src", "../img/front.png")
-            cardSelect[optionTwo].setAttribute("src", "../img/front.png")
+            cardSelect[optionOne].setAttribute("src", "./img/front.png")
+            cardSelect[optionTwo].setAttribute("src", "./img/front.png")
           }, 500)
           rolls++
       }
@@ -193,11 +193,11 @@ addCards(Number(cardsNumber))
   function clearGame() {
       cards = [{
           name: "1",
-          img: "../img/bobrossparrot.gif"
+          img: "./img/bobrossparrot.gif"
       },
       {
           name: "2",
-          img: "../img/explodyparrot.gif"
+          img: "./img/explodyparrot.gif"
       }
     ]
       cardsNumber = 0, seconds = 0, rolls = 0, cardFind = 0, seconds = 0;
