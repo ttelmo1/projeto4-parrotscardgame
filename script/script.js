@@ -159,7 +159,7 @@ addCards(Number(cardsNumber))
           rolls++
       }
       if(cardFind == cardsNumber){
-          alert(`Você ganhou em ${rolls} jogadas e ${seconds} segundos!`)
+          alert(`Você ganhou em ${(rolls*2)} jogadas e ${seconds} segundos!`)
           clearInterval(timerStop)
           restart()
       }
